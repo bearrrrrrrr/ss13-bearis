@@ -131,8 +131,7 @@ var/global/use_preloader = FALSE
 				gridLines.Cut(gridLines.len) // Remove only one blank line at the end.
 
 			bounds[MAP_MINY] = min(bounds[MAP_MINY], ycrd)
-			if (orientation == SOUTH || orientation == NORTH) // Fix to avoid improper loading with EAST and WEST orientation
-				ycrd += gridLines.len - 1 // Start at the top and work down
+			ycrd += gridLines.len - 1 // Start at the top and work down
 
 			if(!cropMap && ycrd > world.maxy)
 				if(!measureOnly)
